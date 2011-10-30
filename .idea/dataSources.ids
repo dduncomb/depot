@@ -4,12 +4,34 @@
     <jdbc-url>jdbc:sqlite:/home/david/projects/depot/db/development.sqlite3</jdbc-url>
     <libraries />
   </data-source>
-  <data-source source="LOCAL" name="Rails depot: test" product="" version="" jdbc-version="" driver-version="" uuid="76ea33f6-df6c-49ef-b898-c731cc5f2059">
+  <data-source source="LOCAL" name="Rails depot: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-version="native" uuid="76ea33f6-df6c-49ef-b898-c731cc5f2059">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:/home/david/projects/depot/db/test.sqlite3</jdbc-url>
-    <libraries />
+    <libraries>
+      <library>
+        <url>file://$PROJECT_DIR$/sqlite-jdbc-3.7.2.jar</url>
+      </library>
+    </libraries>
+    <table name="products" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="title" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="description" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="image_url" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="price" sqlType="DECIMAL(8,2)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="updated_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="schema_migrations" schema="" catalog="" type="TABLE">
+      <column name="version" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <index name="unique_schema_migrations" unique="true" columns="version" />
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="seq" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
   </data-source>
-  <data-source source="LOCAL" name="Rails depot: development2" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-version="native" uuid="b854e48e-125d-4dde-9a47-a257bd434748">
+  <data-source source="LOCAL" name="Rails depot: development2" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-version="native" uuid="b31b15c7-d9b5-48c6-89e2-d9915db2c3a7">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:/home/david/projects/depot/db/development.sqlite3</jdbc-url>
     <libraries>

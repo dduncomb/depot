@@ -1,8 +1,17 @@
+# unit tests are for the model, functional tests are for the controller - particularly in relation to
+# the RESTful architecture and verifying that the model, view and controller all work well together
+
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:one)      # get row labeled 'one' from fixture products.yml
+    @update = {
+        :title       => 'Lorem Ipsum',
+        :description => 'Wibbles are fun!',
+        :image_url   => 'lorem.jpg',
+        :price       => 19.95
+    }
   end
 
   test "should get index" do
@@ -18,7 +27,11 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('Product.count') do
-      post :create, :product => @product.attributes
+      # replace the following line - which now fails due to validations inserted into the Product model
+      # i.e. if you see the @product variable initialization above, the corresponding fixture row fails for example
+      # the image_url validation.  Thew @update attribute hash has no such validation failure
+      #post :create, :product => @product.attributes
+      post :create, :product => @update
     end
 
     assert_redirected_to product_path(assigns(:product))
@@ -35,7 +48,9 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    put :update, :id => @product.to_param, :product => @product.attributes
+    # again replace the following line due to validation failures on @product
+    #put :update, :id => @product.to_param, :product => @product.attributes
+    put :update, :id => @product.to_param, :product => @update
     assert_redirected_to product_path(assigns(:product))
   end
 

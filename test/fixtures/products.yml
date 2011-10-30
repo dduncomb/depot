@@ -13,6 +13,12 @@
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+# fixtures can be used instead of factories (e.g. FactoryGirl gem!)
+# each fixture contains the data for a single model
+
+# like in config/database.yml, use spaces not tabs at line start, and all lines for a
+# (table) row must have same indentation
+
 one:
   title: MyString
   description: MyText
@@ -24,3 +30,15 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+#START:ruby
+
+ruby:
+  title:       Programming Ruby 1.9
+  description:
+    Ruby is the fastest growing and most exciting dynamic
+    language out there.  If you need to get working programs
+    delivered fast, you should add Ruby to your toolbox.
+  price:       49.50
+  image_url:   ruby.png
+#END:ruby
